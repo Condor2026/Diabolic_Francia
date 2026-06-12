@@ -598,7 +598,6 @@ Si ce projet vous a été utile, pensez à lui donner une ⭐ sur GitHub.
 <p align="center">
   <i>🔪 AIDE-FRANCE - Vigilamus pro tuendo (Nous surveillons pour protéger)</i>
 </p>
-```
 
 ---
 
