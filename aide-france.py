@@ -1082,8 +1082,10 @@ class ExtractorNoticias:
         cprint(f"   Sources actives: {total_act}", 'white')
         cprint(f"   Auto-discovery appliqué", 'cyan')
         cprint(f"{'='*80}", 'green', bold=True)
+    
+        input(f"\n{Color.GRAY}Presiona Enter para volver al menú...{Color.RESET}")
+    
         return resultado
-
 # ============================================================================
 # INTERFAZ WEB CON PAGINACIÓN Y 3 IDIOMAS
 # ============================================================================
