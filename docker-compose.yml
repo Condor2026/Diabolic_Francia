@@ -8,13 +8,13 @@ version: '3.8'
 services:
   aide-france:
     build: .
-    container_name: aide-france
+    container_name: aide_france
     restart: unless-stopped
     ports:
       - "5015:5015"
     volumes:
-      - aide-france-data:/app/data
-      - aide-france-exports:/app/exports
+      - aide_france-data:/app/data
+      - aide_france-exports:/app/exports
     environment:
       - PYTHONUNBUFFERED=1
       - PORT=5015
@@ -32,7 +32,7 @@ services:
   # Opcional: servicio de backup automático
   aide-backup:
     image: alpine:latest
-    container_name: aide-backup
+    container_name: aide_backup
     volumes:
       - aide-france-data:/data:ro
       - ./backups:/backups
