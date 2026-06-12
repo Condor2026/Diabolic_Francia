@@ -1,0 +1,59 @@
+# ============================================
+# AIDE FRANCE - Docker Compose
+# Plateforme d'entraide sociale française
+# ============================================
+
+version: '3.8'
+
+services:
+  aide-france:
+    build: .
+    container_name: aide-france
+    restart: unless-stopped
+    ports:
+      - "5015:5015"
+    volumes:
+      - aide-france-data:/app/data
+      - aide-france-exports:/app/exports
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PORT=5015
+      - LANG=fr_FR.UTF-8
+      - LC_ALL=fr_FR.UTF-8
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5015"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - aide-network
+
+  # Opcional: servicio de backup automático
+  aide-backup:
+    image: alpine:latest
+    container_name: aide-backup
+    volumes:
+      - aide-france-data:/data:ro
+      - ./backups:/backups
+    command: |
+      sh -c "
+      while true; do
+        tar -czf /backups/aide-france-backup-$(date +%Y%m%d-%H%M%S).tar.gz /data/ 2>/dev/null || true
+        find /backups -name '*.tar.gz' -mtime +7 -delete
+        sleep 86400
+      done
+      "
+    restart: unless-stopped
+    networks:
+      - aide-network
+
+volumes:
+  aide-france-data:
+    driver: local
+  aide-france-exports:
+    driver: local
+
+networks:
+  aide-network:
+    driver: bridge
