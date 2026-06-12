@@ -1,4 +1,4 @@
-# 🗼 AVISO LEGAL Y ÉTICO - DIABOLIC FRANCIA 🗼
+# 🗼🇫🇷 AVISO LEGAL Y ÉTICO - DIABOLIC FRANCIA 🇫🇷🗼
 
 ## 1. PROPÓSITO DE LA HERRAMIENTA
 aide_france es una herramienta OSINT (Open Source Intelligence) de código abierto diseñada para **analizar noticias públicas** procedentes de periódicos digitales de Francia y detectar **patrones delictivos** (robos, estafas, narcotráfico, violencia, etc.) con fines de:
