@@ -1,6 +1,24 @@
+# ============================================
+# AIDE FRANCE v1.0 - DÉPENDANCES
+# Plateforme d'entraide sociale française
+# ============================================
+
+# HTTP requests et scraping / scraping y peticiones
 requests==2.31.0
-beautifulsoup4==4.12.2
-flask==3.0.0
-lxml==4.9.3
-urllib3==2.1.0
-python-dotenv==1.0.0
+beautifulsoup4==4.12.3
+lxml==5.1.0
+urllib3==2.2.1
+
+# Web framework (dashboard avec pagination)
+flask==3.0.3
+
+# Utilitaires / Utilidades
+python-dotenv==1.0.1
+
+# Opcional: amélioration des performances (futur)
+# aiohttp==3.9.5  # Décommenter pour async (future version)
+
+# ============================================
+# 🇫🇷 AIDE FRANCE - Aide sociale pour la France
+# Installation: pip install -r requirements.txt
+# ============================================
